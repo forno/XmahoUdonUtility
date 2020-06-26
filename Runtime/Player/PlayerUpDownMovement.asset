@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4f11136daadff0b44ac2278a314682ab, type: 3}
-  m_Name: PleyerUpDownMovement
+  m_Name: PlayerUpDownMovement
   m_EditorClassIdentifier: 
   serializedUdonProgramAsset: {fileID: 11400000, guid: 8c9f1b7683ce3f946aac2e501ac84daa,
     type: 2}
@@ -27,16 +27,15 @@ MonoBehaviour:
     null\r\n    instance_3: %VRCSDKBaseVRCPlayerApi, null\r\n    Vector3_2: %UnityEngineVector3,
     null\r\n    Single_0: %SystemSingle, null\r\n    Single_1: %SystemSingle, null\r\n
     \   Single_2: %SystemSingle, null\r\n    Single_3: %SystemSingle, null\r\n    Single_4:
-    %SystemSingle, null\r\n    instance_4: %VRCSDKBaseVRCPlayerApi, null\r\n    instance_5:
-    %VRCSDKBaseVRCPlayerApi, null\r\n    Boolean_6: %SystemBoolean, null\r\n    key_1:
-    %UnityEngineKeyCode, null\r\n    instance_6: %VRCSDKBaseVRCPlayerApi, null\r\n
-    \   velocity_1: %UnityEngineVector3, null\r\n    Vector3_3: %UnityEngineVector3,
-    null\r\n    Vector3_4: %UnityEngineVector3, null\r\n    instance_7: %VRCSDKBaseVRCPlayerApi,
-    null\r\n    Vector3_5: %UnityEngineVector3, null\r\n    Single_5: %SystemSingle,
-    null\r\n    Single_6: %SystemSingle, null\r\n    Single_7: %SystemSingle, null\r\n
-    \   Single_8: %SystemSingle, null\r\n    Single_9: %SystemSingle, null\r\n    instance_8:
-    %VRCSDKBaseVRCPlayerApi, null\r\n    instance_9: %VRCSDKBaseVRCPlayerApi, null\r\n
-    \   isVRCache: %SystemBoolean, null\r\n    upDownFactor: %SystemSingle, null\r\n\r\n.data_end\r\n\r\n.code_start\r\n\r\n
+    %SystemSingle, null\r\n    instance_4: %VRCSDKBaseVRCPlayerApi, null\r\n    Boolean_6:
+    %SystemBoolean, null\r\n    key_1: %UnityEngineKeyCode, null\r\n    instance_5:
+    %VRCSDKBaseVRCPlayerApi, null\r\n    velocity_1: %UnityEngineVector3, null\r\n
+    \   Vector3_3: %UnityEngineVector3, null\r\n    Vector3_4: %UnityEngineVector3,
+    null\r\n    instance_6: %VRCSDKBaseVRCPlayerApi, null\r\n    Vector3_5: %UnityEngineVector3,
+    null\r\n    Single_5: %SystemSingle, null\r\n    Single_6: %SystemSingle, null\r\n
+    \   Single_7: %SystemSingle, null\r\n    Single_8: %SystemSingle, null\r\n    Single_9:
+    %SystemSingle, null\r\n    instance_7: %VRCSDKBaseVRCPlayerApi, null\r\n    isVRCache:
+    %SystemBoolean, null\r\n    upDownFactor: %SystemSingle, null\r\n\r\n.data_end\r\n\r\n.code_start\r\n\r\n
     \   .export _start\r\n    \r\n    _start:\r\n    \r\n        PUSH, var_0\r\n        PUSH,
     objA_0\r\n        COPY\r\n        PUSH, objB_0\r\n        EXTERN, \"VRCSDKBaseNetworking.__get_LocalPlayer__VRCSDKBaseVRCPlayerApi\"\r\n
     \       PUSH, objA_0\r\n        PUSH, objB_0\r\n        PUSH, Boolean_0\r\n        EXTERN,
@@ -57,20 +56,18 @@ MonoBehaviour:
     \       PUSH, objB_1\r\n        PUSH, instance_1\r\n        COPY\r\n        PUSH,
     Boolean_3\r\n        PUSH, isVRCache\r\n        COPY\r\n        JUMP, 0xFFFFFFFC\r\n
     \   \r\n    .export Affect\r\n    \r\n    Affect:\r\n    \r\n        PUSH, isVRCache\r\n
-    \       JUMP_IF_FALSE, 0x000188\r\n        JUMP, 0x000480\r\n        PUSH, key_0\r\n
+    \       JUMP_IF_FALSE, 0x000188\r\n        JUMP, 0x000428\r\n        PUSH, key_0\r\n
     \       PUSH, Boolean_5\r\n        EXTERN, \"UnityEngineInput.__GetKey__UnityEngineKeyCode__SystemBoolean\"\r\n
-    \       PUSH, Boolean_5\r\n        JUMP_IF_FALSE, 0x000304\r\n        PUSH, instance_2\r\n
+    \       PUSH, Boolean_5\r\n        JUMP_IF_FALSE, 0x0002D8\r\n        PUSH, instance_2\r\n
     \       EXTERN, \"VRCSDKBaseNetworking.__get_LocalPlayer__VRCSDKBaseVRCPlayerApi\"\r\n
     \       PUSH, instance_2\r\n        PUSH, instance_3\r\n        COPY\r\n        PUSH,
     instance_2\r\n        PUSH, Vector3_0\r\n        EXTERN, \"VRCSDKBaseVRCPlayerApi.__GetVelocity__UnityEngineVector3\"\r\n
     \       PUSH, Vector3_2\r\n        EXTERN, \"UnityEnginePhysics.__get_gravity__UnityEngineVector3\"\r\n
     \       PUSH, instance_2\r\n        PUSH, instance_4\r\n        COPY\r\n        PUSH,
-    instance_2\r\n        PUSH, Single_3\r\n        EXTERN, \"VRCSDKBaseVRCPlayerApi.__GetWalkSpeed__SystemSingle\"\r\n
-    \       PUSH, Single_4\r\n        EXTERN, \"UnityEngineTime.__get_deltaTime__SystemSingle\"\r\n
-    \       PUSH, Single_3\r\n        PUSH, Single_4\r\n        PUSH, Single_1\r\n
+    instance_2\r\n        PUSH, Single_3\r\n        EXTERN, \"VRCSDKBaseVRCPlayerApi.__GetGravityStrength__SystemSingle\"\r\n
+    \       PUSH, Single_3\r\n        PUSH, upDownFactor\r\n        PUSH, Single_1\r\n
     \       EXTERN, \"SystemSingle.__op_Multiplication__SystemSingle_SystemSingle__SystemSingle\"\r\n
-    \       PUSH, instance_2\r\n        PUSH, instance_5\r\n        COPY\r\n        PUSH,
-    instance_2\r\n        PUSH, Single_2\r\n        EXTERN, \"VRCSDKBaseVRCPlayerApi.__GetGravityStrength__SystemSingle\"\r\n
+    \       PUSH, Single_2\r\n        EXTERN, \"UnityEngineTime.__get_deltaTime__SystemSingle\"\r\n
     \       PUSH, Single_1\r\n        PUSH, Single_2\r\n        PUSH, Single_0\r\n
     \       EXTERN, \"SystemSingle.__op_Multiplication__SystemSingle_SystemSingle__SystemSingle\"\r\n
     \       PUSH, Vector3_2\r\n        PUSH, Single_0\r\n        PUSH, Vector3_1\r\n
@@ -78,28 +75,26 @@ MonoBehaviour:
     \       PUSH, Vector3_0\r\n        PUSH, Vector3_1\r\n        PUSH, velocity_0\r\n
     \       EXTERN, \"UnityEngineVector3.__op_Addition__UnityEngineVector3_UnityEngineVector3__UnityEngineVector3\"\r\n
     \       PUSH, instance_2\r\n        PUSH, velocity_0\r\n        EXTERN, \"VRCSDKBaseVRCPlayerApi.__SetVelocity__UnityEngineVector3__SystemVoid\"\r\n
-    \       JUMP, 0x000480\r\n        PUSH, key_1\r\n        PUSH, Boolean_6\r\n        EXTERN,
+    \       JUMP, 0x000428\r\n        PUSH, key_1\r\n        PUSH, Boolean_6\r\n        EXTERN,
     \"UnityEngineInput.__GetKey__UnityEngineKeyCode__SystemBoolean\"\r\n        PUSH,
-    Boolean_6\r\n        JUMP_IF_FALSE, 0x000480\r\n        PUSH, instance_6\r\n        EXTERN,
+    Boolean_6\r\n        JUMP_IF_FALSE, 0x000428\r\n        PUSH, instance_5\r\n        EXTERN,
     \"VRCSDKBaseNetworking.__get_LocalPlayer__VRCSDKBaseVRCPlayerApi\"\r\n        PUSH,
-    instance_6\r\n        PUSH, instance_7\r\n        COPY\r\n        PUSH, instance_6\r\n
+    instance_5\r\n        PUSH, instance_6\r\n        COPY\r\n        PUSH, instance_5\r\n
     \       PUSH, Vector3_3\r\n        EXTERN, \"VRCSDKBaseVRCPlayerApi.__GetVelocity__UnityEngineVector3\"\r\n
     \       PUSH, Vector3_5\r\n        EXTERN, \"UnityEnginePhysics.__get_gravity__UnityEngineVector3\"\r\n
-    \       PUSH, instance_6\r\n        PUSH, instance_8\r\n        COPY\r\n        PUSH,
-    instance_6\r\n        PUSH, Single_8\r\n        EXTERN, \"VRCSDKBaseVRCPlayerApi.__GetWalkSpeed__SystemSingle\"\r\n
-    \       PUSH, Single_9\r\n        EXTERN, \"UnityEngineTime.__get_deltaTime__SystemSingle\"\r\n
-    \       PUSH, Single_8\r\n        PUSH, Single_9\r\n        PUSH, Single_6\r\n
+    \       PUSH, instance_5\r\n        PUSH, instance_7\r\n        COPY\r\n        PUSH,
+    instance_5\r\n        PUSH, Single_8\r\n        EXTERN, \"VRCSDKBaseVRCPlayerApi.__GetGravityStrength__SystemSingle\"\r\n
+    \       PUSH, Single_8\r\n        PUSH, upDownFactor\r\n        PUSH, Single_6\r\n
     \       EXTERN, \"SystemSingle.__op_Multiplication__SystemSingle_SystemSingle__SystemSingle\"\r\n
-    \       PUSH, instance_6\r\n        PUSH, instance_9\r\n        COPY\r\n        PUSH,
-    instance_6\r\n        PUSH, Single_7\r\n        EXTERN, \"VRCSDKBaseVRCPlayerApi.__GetGravityStrength__SystemSingle\"\r\n
+    \       PUSH, Single_7\r\n        EXTERN, \"UnityEngineTime.__get_deltaTime__SystemSingle\"\r\n
     \       PUSH, Single_6\r\n        PUSH, Single_7\r\n        PUSH, Single_5\r\n
     \       EXTERN, \"SystemSingle.__op_Multiplication__SystemSingle_SystemSingle__SystemSingle\"\r\n
     \       PUSH, Vector3_5\r\n        PUSH, Single_5\r\n        PUSH, Vector3_4\r\n
     \       EXTERN, \"UnityEngineVector3.__op_Multiply__UnityEngineVector3_SystemSingle__UnityEngineVector3\"\r\n
     \       PUSH, Vector3_3\r\n        PUSH, Vector3_4\r\n        PUSH, velocity_1\r\n
     \       EXTERN, \"UnityEngineVector3.__op_Subtraction__UnityEngineVector3_UnityEngineVector3__UnityEngineVector3\"\r\n
-    \       PUSH, instance_6\r\n        PUSH, velocity_1\r\n        EXTERN, \"VRCSDKBaseVRCPlayerApi.__SetVelocity__UnityEngineVector3__SystemVoid\"\r\n
-    \       JUMP, 0x000480\r\n        JUMP, 0xFFFFFFFC\r\n    \r\n\r\n.code_end\r\n"
+    \       PUSH, instance_5\r\n        PUSH, velocity_1\r\n        EXTERN, \"VRCSDKBaseVRCPlayerApi.__SetVelocity__UnityEngineVector3__SystemVoid\"\r\n
+    \       JUMP, 0x000428\r\n        JUMP, 0xFFFFFFFC\r\n    \r\n\r\n.code_end\r\n"
   assemblyError: 
   graphData:
     name: 
@@ -118,7 +113,7 @@ MonoBehaviour:
         stringValue: 
     - fullName: Event_Start
       uid: de08d756-46cc-4f1c-a1fa-75b0d7aa857c
-      position: {x: 60, y: -792}
+      position: {x: 60, y: -780}
       nodeUIDs: []
       flowUIDs:
       - 9592286d-0c41-4231-8de7-a39551e00a20
@@ -184,19 +179,19 @@ MonoBehaviour:
         stringValue: 
     - fullName: UnityEnginePhysics.__get_gravity__UnityEngineVector3
       uid: 7f99d56a-52cf-449c-9b09-55ca61713a9f
-      position: {x: -1392, y: 528}
+      position: {x: -1392, y: 420}
       nodeUIDs: []
       flowUIDs: []
       nodeValues: []
     - fullName: UnityEngineTime.__get_deltaTime__SystemSingle
       uid: 2d905e97-c911-427f-bf74-168eafb77058
-      position: {x: -1392, y: 216}
+      position: {x: -1416, y: 312}
       nodeUIDs: []
       flowUIDs: []
       nodeValues: []
     - fullName: UnityEngineVector3.__op_Multiply__UnityEngineVector3_SystemSingle__UnityEngineVector3
       uid: ecdb1e7c-e7ac-477e-bc08-0e4fa0a4d5e5
-      position: {x: -1152, y: 516}
+      position: {x: -1152, y: 408}
       nodeUIDs:
       - 7f99d56a-52cf-449c-9b09-55ca61713a9f|0
       - 6211ae54-fd28-4bcc-b83d-502e8b445c61|0
@@ -246,27 +241,6 @@ MonoBehaviour:
         stringValue: 
       - unityObjectValue: {fileID: 0}
         stringValue: 
-    - fullName: VRCSDKBaseVRCPlayerApi.__GetWalkSpeed__SystemSingle
-      uid: a5aea559-8dcb-4871-88af-ff8702901ae6
-      position: {x: -1512, y: 132}
-      nodeUIDs:
-      - 697e97a4-2f11-454c-8717-41074d218450|0
-      flowUIDs: []
-      nodeValues:
-      - unityObjectValue: {fileID: 0}
-        stringValue: 
-    - fullName: SystemSingle.__op_Multiplication__SystemSingle_SystemSingle__SystemSingle
-      uid: aaf6a5fb-963c-44cb-a2c0-1138931ca1cc
-      position: {x: -1128, y: 144}
-      nodeUIDs:
-      - a5aea559-8dcb-4871-88af-ff8702901ae6|0
-      - 2d905e97-c911-427f-bf74-168eafb77058|0
-      flowUIDs: []
-      nodeValues:
-      - unityObjectValue: {fileID: 0}
-        stringValue: 
-      - unityObjectValue: {fileID: 0}
-        stringValue: 
     - fullName: UnityEngineInput.__GetKey__UnityEngineKeyCode__SystemBoolean
       uid: 9e8c34a0-6226-4288-b83d-fb8c5afff44a
       position: {x: -600, y: 708}
@@ -292,7 +266,7 @@ MonoBehaviour:
       position: {x: -720, y: 972}
       nodeUIDs:
       - 805a0025-de85-4cb0-a290-77f4f40439df|0
-      - 81679f4b-f8c0-42d5-9ed6-504b0ba3e07e|0
+      - 0fcc7af1-be76-442e-b367-6c6babc73bf0|0
       flowUIDs: []
       nodeValues:
       - unityObjectValue: {fileID: 0}
@@ -427,7 +401,7 @@ MonoBehaviour:
       nodeValues: []
     - fullName: VRCSDKBaseVRCPlayerApi.__GetGravityStrength__SystemSingle
       uid: abd01e60-8556-4b6f-af40-2e355225aa6f
-      position: {x: -1512, y: 324}
+      position: {x: -1512, y: 144}
       nodeUIDs:
       - 697e97a4-2f11-454c-8717-41074d218450|0
       flowUIDs: []
@@ -436,56 +410,14 @@ MonoBehaviour:
         stringValue: 
     - fullName: SystemSingle.__op_Multiplication__SystemSingle_SystemSingle__SystemSingle
       uid: e6476bca-26b2-4d3a-bb36-79bf8c0166c9
-      position: {x: -1128, y: 276}
+      position: {x: -1128, y: 168}
       nodeUIDs:
-      - aaf6a5fb-963c-44cb-a2c0-1138931ca1cc|0
       - abd01e60-8556-4b6f-af40-2e355225aa6f|0
+      - 33b0d445-d9f3-432e-b46f-c787570d927c|0
       flowUIDs: []
       nodeValues:
       - unityObjectValue: {fileID: 0}
         stringValue: 
-      - unityObjectValue: {fileID: 0}
-        stringValue: 
-    - fullName: SystemSingle.__op_Multiplication__SystemSingle_SystemSingle__SystemSingle
-      uid: 411844c8-c11d-458e-86fe-4fa9cd6cefc6
-      position: {x: -1092, y: 948}
-      nodeUIDs:
-      - df02d326-2d48-42ce-8591-c4f6c77a7f81|0
-      - e197c2cc-2025-435e-88d7-c08cc623affa|0
-      flowUIDs: []
-      nodeValues:
-      - unityObjectValue: {fileID: 0}
-        stringValue: 
-      - unityObjectValue: {fileID: 0}
-        stringValue: 
-    - fullName: VRCSDKBaseVRCPlayerApi.__GetGravityStrength__SystemSingle
-      uid: e197c2cc-2025-435e-88d7-c08cc623affa
-      position: {x: -1476, y: 996}
-      nodeUIDs:
-      - 555bef90-4b2c-48e5-baad-a439b22b2f64|0
-      flowUIDs: []
-      nodeValues:
-      - unityObjectValue: {fileID: 0}
-        stringValue: 
-    - fullName: SystemSingle.__op_Multiplication__SystemSingle_SystemSingle__SystemSingle
-      uid: df02d326-2d48-42ce-8591-c4f6c77a7f81
-      position: {x: -1092, y: 816}
-      nodeUIDs:
-      - 19cc958e-c899-4b1a-81c3-3d9f768af0e1|0
-      - 0c318bfd-c87e-496b-89f4-82053a058ffd|0
-      flowUIDs: []
-      nodeValues:
-      - unityObjectValue: {fileID: 0}
-        stringValue: 
-      - unityObjectValue: {fileID: 0}
-        stringValue: 
-    - fullName: VRCSDKBaseVRCPlayerApi.__GetWalkSpeed__SystemSingle
-      uid: 19cc958e-c899-4b1a-81c3-3d9f768af0e1
-      position: {x: -1476, y: 804}
-      nodeUIDs:
-      - 555bef90-4b2c-48e5-baad-a439b22b2f64|0
-      flowUIDs: []
-      nodeValues:
       - unityObjectValue: {fileID: 0}
         stringValue: 
     - fullName: VRCSDKBaseVRCPlayerApi.__GetVelocity__UnityEngineVector3
@@ -500,30 +432,6 @@ MonoBehaviour:
     - fullName: VRCSDKBaseNetworking.__get_LocalPlayer__VRCSDKBaseVRCPlayerApi
       uid: 555bef90-4b2c-48e5-baad-a439b22b2f64
       position: {x: -1416, y: 672}
-      nodeUIDs: []
-      flowUIDs: []
-      nodeValues: []
-    - fullName: UnityEngineVector3.__op_Multiply__UnityEngineVector3_SystemSingle__UnityEngineVector3
-      uid: 81679f4b-f8c0-42d5-9ed6-504b0ba3e07e
-      position: {x: -1116, y: 1236}
-      nodeUIDs:
-      - 72d8a288-5645-4ee3-9513-9b1423059b05|0
-      - 4d64bfcc-14c3-4f69-8299-86e8e2dd028e|0
-      flowUIDs: []
-      nodeValues:
-      - unityObjectValue: {fileID: 0}
-        stringValue: 
-      - unityObjectValue: {fileID: 0}
-        stringValue: 
-    - fullName: UnityEngineTime.__get_deltaTime__SystemSingle
-      uid: 0c318bfd-c87e-496b-89f4-82053a058ffd
-      position: {x: -1356, y: 888}
-      nodeUIDs: []
-      flowUIDs: []
-      nodeValues: []
-    - fullName: UnityEnginePhysics.__get_gravity__UnityEngineVector3
-      uid: 72d8a288-5645-4ee3-9513-9b1423059b05
-      position: {x: -1356, y: 1248}
       nodeUIDs: []
       flowUIDs: []
       nodeValues: []
@@ -560,10 +468,10 @@ MonoBehaviour:
         stringValue: System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089|Affect
     - fullName: SystemSingle.__op_Multiplication__SystemSingle_SystemSingle__SystemSingle
       uid: 6211ae54-fd28-4bcc-b83d-502e8b445c61
-      position: {x: -1128, y: 396}
+      position: {x: -1128, y: 288}
       nodeUIDs:
       - e6476bca-26b2-4d3a-bb36-79bf8c0166c9|0
-      - 33b0d445-d9f3-432e-b46f-c787570d927c|0
+      - 2d905e97-c911-427f-bf74-168eafb77058|0
       flowUIDs: []
       nodeValues:
       - unityObjectValue: {fileID: 0}
@@ -572,7 +480,16 @@ MonoBehaviour:
         stringValue: 
     - fullName: Get_Variable
       uid: 33b0d445-d9f3-432e-b46f-c787570d927c
-      position: {x: -1452, y: 420}
+      position: {x: -1464, y: 228}
+      nodeUIDs:
+      - 
+      flowUIDs: []
+      nodeValues:
+      - unityObjectValue: {fileID: 0}
+        stringValue: System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089|895bc806-01c3-47fb-bdad-2f83bafd473f
+    - fullName: Get_Variable
+      uid: 61c83071-48a0-4e1b-bdaf-111151760060
+      position: {x: -1452, y: 876}
       nodeUIDs:
       - 
       flowUIDs: []
@@ -580,24 +497,60 @@ MonoBehaviour:
       - unityObjectValue: {fileID: 0}
         stringValue: System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089|895bc806-01c3-47fb-bdad-2f83bafd473f
     - fullName: SystemSingle.__op_Multiplication__SystemSingle_SystemSingle__SystemSingle
-      uid: 4d64bfcc-14c3-4f69-8299-86e8e2dd028e
-      position: {x: -1092, y: 1092}
+      uid: 3c5e82b7-0b62-4e14-8fbe-5821df0ee8c4
+      position: {x: -1116, y: 936}
       nodeUIDs:
-      - 411844c8-c11d-458e-86fe-4fa9cd6cefc6|0
-      - 21305b38-d319-48cd-a29e-583eb3107f4a|0
+      - 78e1e820-6750-41fe-873b-c826dc19fc24|0
+      - 316b9b3f-d4a4-4ecb-91e1-010a4897eec9|0
       flowUIDs: []
       nodeValues:
       - unityObjectValue: {fileID: 0}
         stringValue: 
       - unityObjectValue: {fileID: 0}
         stringValue: 
-    - fullName: Get_Variable
-      uid: 21305b38-d319-48cd-a29e-583eb3107f4a
-      position: {x: -1416, y: 1116}
+    - fullName: SystemSingle.__op_Multiplication__SystemSingle_SystemSingle__SystemSingle
+      uid: 78e1e820-6750-41fe-873b-c826dc19fc24
+      position: {x: -1116, y: 816}
       nodeUIDs:
-      - 
+      - 453ab572-e6d0-4e06-a3fe-6d88947d49e8|0
+      - 61c83071-48a0-4e1b-bdaf-111151760060|0
       flowUIDs: []
       nodeValues:
       - unityObjectValue: {fileID: 0}
-        stringValue: System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089|895bc806-01c3-47fb-bdad-2f83bafd473f
+        stringValue: 
+      - unityObjectValue: {fileID: 0}
+        stringValue: 
+    - fullName: VRCSDKBaseVRCPlayerApi.__GetGravityStrength__SystemSingle
+      uid: 453ab572-e6d0-4e06-a3fe-6d88947d49e8
+      position: {x: -1500, y: 792}
+      nodeUIDs:
+      - 555bef90-4b2c-48e5-baad-a439b22b2f64|0
+      flowUIDs: []
+      nodeValues:
+      - unityObjectValue: {fileID: 0}
+        stringValue: 
+    - fullName: UnityEngineVector3.__op_Multiply__UnityEngineVector3_SystemSingle__UnityEngineVector3
+      uid: 0fcc7af1-be76-442e-b367-6c6babc73bf0
+      position: {x: -1140, y: 1056}
+      nodeUIDs:
+      - aae7296c-84f3-42e9-bc52-fc1d86bc0644|0
+      - 3c5e82b7-0b62-4e14-8fbe-5821df0ee8c4|0
+      flowUIDs: []
+      nodeValues:
+      - unityObjectValue: {fileID: 0}
+        stringValue: 
+      - unityObjectValue: {fileID: 0}
+        stringValue: 
+    - fullName: UnityEngineTime.__get_deltaTime__SystemSingle
+      uid: 316b9b3f-d4a4-4ecb-91e1-010a4897eec9
+      position: {x: -1404, y: 960}
+      nodeUIDs: []
+      flowUIDs: []
+      nodeValues: []
+    - fullName: UnityEnginePhysics.__get_gravity__UnityEngineVector3
+      uid: aae7296c-84f3-42e9-bc52-fc1d86bc0644
+      position: {x: -1380, y: 1068}
+      nodeUIDs: []
+      flowUIDs: []
+      nodeValues: []
   showAssembly: 0
