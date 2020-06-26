@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4f11136daadff0b44ac2278a314682ab, type: 3}
   m_Name: WorldGravity
   m_EditorClassIdentifier: 
-  serializedUdonProgramAsset: {fileID: 11400000, guid: 8de673153d3662147b4b466e20698123,
+  serializedUdonProgramAsset: {fileID: 11400000, guid: 9fa87eabf41fe284eb70a9871e871a81,
     type: 2}
   udonAssembly: ".data_start\r\n\r\n    .export gravity\r\n    \r\n    value_0: %UnityEngineVector3,
     null\r\n    gravity: %UnityEngineVector3, null\r\n\r\n.data_end\r\n\r\n.code_start\r\n\r\n

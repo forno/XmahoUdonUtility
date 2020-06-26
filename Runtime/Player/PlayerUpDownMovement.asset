@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4f11136daadff0b44ac2278a314682ab, type: 3}
   m_Name: PlayerUpDownMovement
   m_EditorClassIdentifier: 
-  serializedUdonProgramAsset: {fileID: 11400000, guid: 8c9f1b7683ce3f946aac2e501ac84daa,
+  serializedUdonProgramAsset: {fileID: 11400000, guid: 9cf586a93bad33a4fb4907ef0e2c69cc,
     type: 2}
   udonAssembly: ".data_start\r\n\r\n    .export upDownFactor\r\n    \r\n    Boolean_0:
     %SystemBoolean, null\r\n    objA_0: %SystemObject, null\r\n    objB_0: %SystemObject,
